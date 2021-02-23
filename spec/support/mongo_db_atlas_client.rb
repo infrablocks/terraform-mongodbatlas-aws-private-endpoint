@@ -12,37 +12,24 @@ class MongoDBAtlasClient
         ENV["MONGODB_ATLAS_PRIVATE_KEY"]
   end
 
-  def get_one_project(project_id)
+  def get_all_private_endpoint_services_for_provider(project_id, provider)
     JSON.parse(
-        get("/groups/#{project_id}").body)
+        get("/groups/#{project_id}/privateEndpoint/#{provider}/endpointService")
+            .body)
   end
 
-  def get_project_ip_access_list(project_id)
-    JSON.parse(get("/groups/#{project_id}/accessList").body)
-  end
+  def get_one_private_endpoint_for_provider(
+      project_id,
+      provider,
+      endpoint_service_id,
+      endpoint_id)
+    project_url = "/groups/#{project_id}"
+    endpoint_provider_url = "#{project_url}/privateEndpoint/#{provider}"
+    endpoint_service_url =
+        "#{endpoint_provider_url}/endpointService/#{endpoint_service_id}"
+    endpoint_url = "#{endpoint_service_url}/endpoint/#{endpoint_id}"
 
-  def get_one_database_user(project_id, username)
-    JSON.parse(
-        get("/groups/#{project_id}/databaseUsers/admin/#{username}").body)
-  end
-
-  def get_all_teams_assigned_to_project(project_id)
-    JSON.parse(get("/groups/#{project_id}/teams").body)
-  end
-
-  def get_one_team_by_name(organisation_id, team_name)
-    JSON.parse(
-        get("/orgs/#{organisation_id}/teams/byName/#{team_name}").body)
-  end
-
-  def get_all_users_assigned_to_team(organisation_id, team_id)
-    JSON.parse(
-        get("/orgs/#{organisation_id}/teams/#{team_id}/users").body)
-  end
-
-  def get_one_cluster(project_id, cluster_name)
-    JSON.parse(
-        get("/groups/#{project_id}/clusters/#{cluster_name}").body)
+    JSON.parse(get(endpoint_url).body)
   end
 
   private

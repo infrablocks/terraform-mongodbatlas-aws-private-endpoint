@@ -1,8 +1,12 @@
+require 'aws-sdk'
+require 'awspec'
 require 'ostruct'
 
 require_relative '../terraform_module'
 
 shared_context :terraform do
+  include Awspec::Helper::Finder
+
   let(:vars) {
     OpenStruct.new(
         TerraformModule.configuration

@@ -53,13 +53,13 @@ namespace :keys do
         name_prefix: 'gpg',
         owner_name: 'InfraBlocks Maintainers',
         owner_email: 'maintainers@infrablocks.io',
-        owner_comment: 'terraform-mongodbatlas-aws-privatelink CI Key')
+        owner_comment: 'terraform-mongodbatlas-aws-private-endpoint CI Key')
   end
 end
 
 RakeCircleCI.define_project_tasks(
     namespace: :circle_ci,
-    project_slug: 'github/infrablocks/terraform-mongodbatlas-aws-privatelink'
+    project_slug: 'github/infrablocks/terraform-mongodbatlas-aws-private-endpoint'
 ) do |t|
   circle_ci_config =
       YAML.load_file('config/secrets/circle_ci/config.yaml')
@@ -81,7 +81,7 @@ end
 
 RakeGithub.define_repository_tasks(
     namespace: :github,
-    repository: 'infrablocks/terraform-mongodbatlas-aws-privatelink',
+    repository: 'infrablocks/terraform-mongodbatlas-aws-private-endpoint',
 ) do |t|
   github_config =
       YAML.load_file('config/secrets/github/config.yaml')
@@ -107,6 +107,7 @@ end
 
 namespace :test do
   RSpec::Core::RakeTask.new(:integration => ['terraform:ensure']) do
+    ENV['AWS_REGION'] = 'eu-west-1'
     ENV['TF_PLUGIN_CACHE_DIR'] =
         "#{Paths.project_root_directory}/vendor/terraform/plugins"
   end

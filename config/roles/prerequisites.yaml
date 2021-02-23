@@ -6,3 +6,8 @@ vars:
   deployment_identifier: "%{hiera('deployment_identifier')}"
 
   organization_id: "%{hiera('organization_id')}"
+
+  region: "%{hiera('region')}"
+  availability_zones: "%{hiera('availability_zones')}"
+
+  vpc_cidr: "%{hiera('vpc_cidr')}"

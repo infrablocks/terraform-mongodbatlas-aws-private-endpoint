@@ -1,15 +1,15 @@
-Terraform MongoDB Atlas AWS PrivateLink
-=======================================
+Terraform MongoDB Atlas AWS Private Endpoint
+============================================
 
 [![CircleCI](https://circleci.com/gh/infrablocks/terraform-mongodbatlas-cluster.svg?style=svg)](https://circleci.com/gh/infrablocks/terraform-mongodbatlas-cluster)
 
-A Terraform module for creating an AWS PrivateLink endpoint for MongoDB Atlas.
+A Terraform module for creating a private endpoint for AWS for MongoDB Atlas.
 
-The AWS PrivateLink endpoint requires:
+The private endpoint requires:
 * An existing project within a MongoDB organisation
 * An existing VPC in AWS
 
-The AWS PrivateLink endpoint consists of:
+The private endpoint consists of:
 * TODO
 
 Usage
@@ -19,13 +19,13 @@ To use the module, include something like the following in your terraform
 configuration:
 
 ```hcl-terraform
-module "mongodbatlas_aws_privatelink" {
-  source  = "infrablocks/aws-privatelink/mongodbatlas"
+module "mongodbatlas_aws_private_endpoint" {
+  source  = "infrablocks/aws-private-endpoint/mongodbatlas"
   version = "0.1.0"
 }
 ```
 
-As mentioned above, the privatelink applies to an existing project. 
+As mentioned above, the private endpoint applies to an existing project. 
 Whilst the project can be created using any mechanism you like, the 
 [MongoDB Atlas Project](https://github.com/infrablocks/terraform-mongodbatlas-project)
 module will create everything you need. See the 
@@ -155,7 +155,7 @@ Contributing
 ------------
 
 Bug reports and pull requests are welcome on GitHub at 
-https://github.com/infrablocks/terraform-mongodbatlas-aws-privatelink. 
+https://github.com/infrablocks/terraform-mongodbatlas-aws-private-endpoint. 
 This project is intended to be a safe, welcoming space for collaboration, and 
 contributors are expected to adhere to the 
 [Contributor Covenant](http://contributor-covenant.org) code of conduct.
