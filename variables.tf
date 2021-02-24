@@ -13,6 +13,7 @@ variable "region" {
 }
 variable "vpc_id" {
   description = "The ID of the VPC for which to create the private endpoint"
+  type        = string
 }
 variable "subnet_ids" {
   description = "The subnet IDs within the VPC for which to create the private endpoint."
@@ -29,8 +30,8 @@ variable "allow_cidrs" {
   description = "The CIDRs from which the private endpoint should be accessible."
 }
 
-variable "tags" {
-  description = "A map of tags to be applied to the security group."
+variable "labels" {
+  description = "A map of labels to be applied to created resource, in addition to the defaults."
   type        = map(string)
   default     = {}
 }

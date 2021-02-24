@@ -9,7 +9,7 @@ resource "aws_security_group" "endpoint" {
   description = "VPC endpoint security group for ${mongodbatlas_privatelink_endpoint.endpoint.endpoint_service_name}"
   vpc_id      = var.vpc_id
 
-  tags = local.tags
+  tags = local.labels
 }
 
 resource "aws_security_group_rule" "ingress" {

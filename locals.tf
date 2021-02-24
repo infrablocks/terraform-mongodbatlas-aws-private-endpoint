@@ -1,8 +1,8 @@
 locals {
-  base_tags = {
+  base_labels = {
     Component            = var.component
     DeploymentIdentifier = var.deployment_identifier
   }
 
-  tags = merge(var.tags, local.base_tags)
+  labels = merge(var.labels, local.base_labels)
 }
