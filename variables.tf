@@ -31,7 +31,7 @@ variable "allow_cidrs" {
 }
 
 variable "labels" {
-  description = "A map of labels to be applied to created resource, in addition to the defaults."
+  description = "A map of labels to be applied to created resources, in addition to the defaults."
   type        = map(string)
   default     = {}
 }
