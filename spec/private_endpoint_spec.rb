@@ -8,13 +8,13 @@ describe 'Private Endpoint' do
 
   let(:allow_cidrs) { vars.allow_cidrs }
 
-  let(:project_id) { output_for(:prerequisites, "project_id", parse: true) }
+  let(:project_id) { output_for(:prerequisites, "project_id") }
 
-  let(:vpc_id) { output_for(:prerequisites, "vpc_id", parse: true) }
-  let(:subnet_ids) { output_for(:prerequisites, "subnet_ids", parse: true) }
+  let(:vpc_id) { output_for(:prerequisites, "vpc_id") }
+  let(:subnet_ids) { output_for(:prerequisites, "subnet_ids") }
 
   let(:vpc_endpoint_id) do
-    output_for(:harness, "vpc_endpoint_id", parse: true)
+    output_for(:harness, "vpc_endpoint_id")
   end
 
   it 'creates a privatelink endpoint for the project in the specified region' do
