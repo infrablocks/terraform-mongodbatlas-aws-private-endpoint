@@ -32,6 +32,11 @@ module will create everything you need. See the
 [docs](https://github.com/infrablocks/terraform-mongodbatlas-project/blob/master/README.md)
 for usage instructions.
 
+See the 
+[Terraform registry entry](https://registry.terraform.io/modules/infrablocks/aws-private-endpoint/mongodbatlas/latest) 
+for more details.
+
+
 ### Inputs
 
 | Name                             | Description                                                                   | Default             | Required                             |
@@ -43,6 +48,10 @@ for usage instructions.
 | Name                                    | Description                                               |
 |-----------------------------------------|-----------------------------------------------------------|
 
+### Compatibility
+
+This module is compatible with Terraform versions greater than or equal to 
+Terraform 0.14.
 
 Development
 -----------
