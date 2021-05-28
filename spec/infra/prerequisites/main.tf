@@ -1,6 +1,6 @@
 module "project" {
   source  = "infrablocks/project/mongodbatlas"
-  version = "0.1.0"
+  version = "1.0.0"
 
   component = var.component
   deployment_identifier = var.deployment_identifier
@@ -10,7 +10,7 @@ module "project" {
 
 module "base_network" {
   source  = "infrablocks/base-networking/aws"
-  version = "3.0.0"
+  version = "4.0.0"
 
   vpc_cidr           = var.vpc_cidr
   region             = var.region
