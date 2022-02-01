@@ -1250,6 +1250,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-19
 
 DEPENDENCIES
@@ -1268,4 +1269,4 @@ DEPENDENCIES
   semantic (~> 1.6)
 
 BUNDLED WITH
-   2.2.18
+   2.3.6
