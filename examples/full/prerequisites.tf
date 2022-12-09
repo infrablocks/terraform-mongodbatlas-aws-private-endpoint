@@ -1,6 +1,6 @@
 module "project" {
   source  = "infrablocks/project/mongodbatlas"
-  version = "1.1.0"
+  version = "1.2.0-rc.2"
 
   component = var.component
   deployment_identifier = var.deployment_identifier
@@ -10,7 +10,7 @@ module "project" {
 
 module "base_network" {
   source  = "infrablocks/base-networking/aws"
-  version = "4.0.0"
+  version = "4.1.0-rc.5"
 
   vpc_cidr           = var.vpc_cidr
   region             = var.region
@@ -20,4 +20,5 @@ module "base_network" {
   deployment_identifier = var.deployment_identifier
 
   include_route53_zone_association = "no"
+  include_nat_gateways = "no"
 }

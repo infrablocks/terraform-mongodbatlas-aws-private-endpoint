@@ -1,9 +1,6 @@
 ---
 component: 'test'
-deployment_identifier: "%{hiera('deployment_identifier')}"
-
-work_directory: 'build'
-configuration_directory: "%{hiera('work_directory')}/%{hiera('source_directory')}"
+deployment_identifier: "%{hiera('seed')}"
 
 organization_id: "602e67f467852d083d43a50f"
 
