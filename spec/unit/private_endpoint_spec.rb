@@ -124,7 +124,7 @@ describe 'private endpoint' do
         expect(@plan)
           .to(include_resource_creation(type: 'aws_vpc_endpoint')
                 .with_attribute_value(
-                  :subnet_ids, contain_exactly(*subnet_ids)
+                  :subnet_ids, match_array(subnet_ids)
                 ))
       end
     end
